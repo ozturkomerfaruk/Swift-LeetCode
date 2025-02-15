@@ -1,7 +1,3 @@
-Here's a well-structured **README** description for your **LeetCode solutions repository**:  
-
----
-
 # **LeetCode Solutions by Ömer Faruk Öztürk**  
 
 This repository contains my **optimized** and **well-structured** solutions for various **LeetCode** problems. Each solution is designed to be **efficient**, **readable**, and follows best coding practices. 🚀  
@@ -24,7 +20,3 @@ As a passionate **iOS developer** and software engineer, I enjoy tackling algori
 🔗 **LinkedIn**: [Ömer Faruk Öztürk](https://www.linkedin.com/in/ozturkomerfaruk/)  
 
 🚀 **Happy Coding!** 🎯  
-
----
-
-Would you like any modifications or additional sections? 😊
