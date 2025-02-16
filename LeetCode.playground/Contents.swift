@@ -269,4 +269,39 @@ class Solution {
         //TODO
         return 0
     }
+    
+    //26. Remove Duplicates from Sorted Array
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        #if true
+        //Runtime 0ms 20.5 MB Memory
+        guard nums.count > 1 else { return nums.count }
+        
+        var index = 1
+        for num in nums.dropFirst() where num != nums[index - 1] {
+            nums[index] = num
+            index += 1
+        }
+        
+        return index
+        #else
+        //Runtime 0ms 19.5 MB Memory
+        var stack = [Int]()
+                
+                nums.forEach {
+                    if !stack.contains($0) {
+                        stack.append($0)
+                    }
+                }
+                
+                nums = stack
+                return nums.count
+        #endif
+    }
 }
+
+let solution = Solution()
+var nums = [0,0,1,1,1,2,2,3,3,4]
+let answer = solution.removeDuplicates(&nums)
+print(answer)
+
+//TODO: Answers can be separated according to problem type.
