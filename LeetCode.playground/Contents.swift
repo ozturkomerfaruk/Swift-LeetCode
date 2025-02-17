@@ -287,21 +287,34 @@ class Solution {
         //Runtime 0ms 19.5 MB Memory
         var stack = [Int]()
                 
-                nums.forEach {
-                    if !stack.contains($0) {
-                        stack.append($0)
-                    }
-                }
-                
-                nums = stack
-                return nums.count
+        nums.forEach {
+            if !stack.contains($0) {
+                stack.append($0)
+            }
+        }
+        
+        nums = stack
+        return nums.count
         #endif
+    }
+    
+    //27. Remove Element
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+        var stack = [Int]()
+        nums.forEach {
+            if $0 != val {
+                stack.append($0)
+            }
+        }
+        
+        nums = stack
+        return nums.count
     }
 }
 
 let solution = Solution()
-var nums = [0,0,1,1,1,2,2,3,3,4]
-let answer = solution.removeDuplicates(&nums)
+var nums = [0,1,2,2,3,0,4,2]
+let answer = solution.removeElement(&nums, 2)
 print(answer)
 
 //TODO: Answers can be separated according to problem type.
