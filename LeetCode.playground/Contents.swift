@@ -310,11 +310,25 @@ class Solution {
         nums = stack
         return nums.count
     }
+    
+    //3452. Sum of Good Numbers
+    func sumOfGoodNumbers(_ nums: [Int], _ k: Int) -> Int {
+        var sum = 0
+        
+        for i in 0..<nums.count {
+            if (i-k < 0 || nums[i] > nums[i-k]) &&
+                (i+k > nums.count - 1 || nums[i] > nums[i+k]) {
+                sum += nums[i]
+            }
+        }
+        
+        return sum
+    }
 }
 
 let solution = Solution()
-var nums = [0,1,2,2,3,0,4,2]
-let answer = solution.removeElement(&nums, 2)
-print(answer)
+var nums = [1,3,2,1,5,4]
+let answer = solution.sumOfGoodNumbers(nums, 2)
+print("answer: \(answer)")
 
 //TODO: Answers can be separated according to problem type.
