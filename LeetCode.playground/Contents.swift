@@ -8,7 +8,6 @@ import UIKit
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let solution = ArrayEasy()
-var nums = [1,3,2,1,5,4]
-let answer = solution.sumOfGoodNumbers(nums, 2)
+let solution = MathEasy()
+let answer = solution.isPalindrome(0)
 print("answer: \(answer)")

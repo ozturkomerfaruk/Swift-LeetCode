@@ -11,8 +11,17 @@ public class MathEasy {
     
     //9. Palindrome Number
     public func isPalindrome(_ x: Int) -> Bool {
-        //TODO
-        return false
+        guard x >= 0 else { return false }
+        
+        let digits = Array(String(x))
+        var left = 0, right = digits.count - 1
+        
+        while left < right {
+            if digits[left] != digits[right] { return false }
+            left += 1
+            right -= 1
+        }
+        return true
     }
 
     //202. Happy Number
