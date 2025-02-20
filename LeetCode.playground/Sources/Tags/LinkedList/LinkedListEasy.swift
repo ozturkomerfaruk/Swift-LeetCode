@@ -11,7 +11,18 @@ public class LinkedListEasy {
     
     //141. Linked List Cycle
     public func hasCycle(_ head: ListNode?) -> Bool {
-        //TODO
+        var fast: ListNode? = head
+        var slow: ListNode? = head
+
+        while fast != nil, fast?.next != nil {
+            fast = fast?.next
+            slow = slow?.next?.next
+            
+            if slow === fast {
+                return true
+            }
+        }
+        
         return false
     }
 
