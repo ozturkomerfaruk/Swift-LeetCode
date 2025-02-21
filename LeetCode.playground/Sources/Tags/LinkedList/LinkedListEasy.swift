@@ -40,7 +40,17 @@ public class LinkedListEasy {
 
     //206. Reverse Linked List
     public func reverseList(_ head: ListNode?) -> ListNode? {
-        //TODO
-        return nil
+        var prevNode: ListNode? = nil
+        var current: ListNode? = head
+        var nextNode: ListNode? = nil
+        
+        while current != nil {
+            nextNode = current?.next
+            current?.next = prevNode
+            prevNode = current
+            current = nextNode
+        }
+        
+        return prevNode
     }
 }

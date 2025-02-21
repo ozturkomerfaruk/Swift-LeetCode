@@ -8,6 +8,13 @@ import UIKit
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let solution = MathEasy()
-let answer = solution.isPalindrome(0)
-print("answer: \(answer)")
+
+let node = ListNode(1, ListNode(2, ListNode(3, nil)))
+let easy = LinkedListEasy()
+
+var reversedNode: ListNode? = easy.reverseList(node)
+
+while reversedNode != nil {
+    print(reversedNode?.val)
+    reversedNode = reversedNode?.next
+}
