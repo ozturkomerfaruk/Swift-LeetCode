@@ -9,12 +9,6 @@ import UIKit
 ///
 
 
-let node = ListNode(1, ListNode(2, ListNode(3, nil)))
-let easy = LinkedListEasy()
-
-var reversedNode: ListNode? = easy.reverseList(node)
-
-while reversedNode != nil {
-    print(reversedNode?.val)
-    reversedNode = reversedNode?.next
-}
+let easy = MathEasy()
+let answer = easy.fib(4)
+print("answer: \(answer)")

@@ -51,7 +51,13 @@ public class MathEasy {
 
     //509. Fibonacci Number
     public func fib(_ n: Int) -> Int {
-        //TODO
-        return 0
+        if n < 2 { return n }
+
+        var a = 0, b = 1
+        for _ in 2...n {
+            (a, b) = (b, a + b)
+        }
+
+        return b
     }
 }
