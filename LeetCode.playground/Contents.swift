@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 /// **LeetCode Solutions by Ömer Faruk Öztürk**
 ///
@@ -8,7 +8,8 @@ import UIKit
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
+let easy = StringEasy()
+var chars: [Character] = ["h","e","l","l","o"]
 
-let easy = MathEasy()
-let answer = easy.fib(4)
-print("answer: \(answer)")
+var tagSolution = Tags.stringEasy.create() as? StringEasy
+tagSolution?.reverseString(&chars)

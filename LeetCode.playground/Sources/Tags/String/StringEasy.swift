@@ -65,7 +65,7 @@ public class StringEasy {
 
     //344. Reverse String
     public func reverseString(_ s: inout [Character]) {
-        //TODO
+        s.reverse()
     }
 
     //844. Backspace String Compare
