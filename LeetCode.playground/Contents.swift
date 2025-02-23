@@ -8,5 +8,5 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringEasy.create() as? StringEasy
-tagSolution?.backspaceCompare("ab#c", "ad#c")
+var tagSolution = Tags.mathEasy.create() as? MathEasy
+tagSolution?.fizzBuzz(15)

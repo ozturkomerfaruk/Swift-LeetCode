@@ -48,6 +48,32 @@ public class MathEasy {
         let sumOfSquares: Int = digits.reduce(0) { $0 + $1 * $1 }
         return sumOfSquares
     }
+    
+    //412. Fizz Buzz
+    ///reserveCapacity(n) -> Önceden bellek ayırarak dinamik array genişlemesini engeller.
+    ///String birleştirme kaldırıldı -> += yerine append("FizzBuzz") doğrudan çağrıldı.
+    ///% işlemleri azaltıldı -> Fazladan if kontrolü yerine önceden hesaplanmış boolean değerler kullanıldı.
+    ///Daha az gereksiz işlem -> result.isEmpty yerine doğrudan if bloklarıyla ekleme yapıldı.
+    public func fizzBuzz(_ n: Int) -> [String] {
+        var resultArray = [String]()
+        resultArray.reserveCapacity(n) // Önceden kapasite ayır
+        
+        for i in 1...n {
+            let divisibleBy3 = (i % 3 == 0)
+            let divisibleBy5 = (i % 5 == 0)
+
+            if divisibleBy3 && divisibleBy5 {
+                resultArray.append("FizzBuzz")
+            } else if divisibleBy3 {
+                resultArray.append("Fizz")
+            } else if divisibleBy5 {
+                resultArray.append("Buzz")
+            } else {
+                resultArray.append("\(i)")
+            }
+        }
+        return resultArray
+    }
 
     //509. Fibonacci Number
     public func fib(_ n: Int) -> Int {
