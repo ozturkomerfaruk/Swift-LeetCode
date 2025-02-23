@@ -70,8 +70,23 @@ public class StringEasy {
 
     //844. Backspace String Compare
     public func backspaceCompare(_ s: String, _ t: String) -> Bool {
-        //TODO:
-        return false
+        func process(_ str: String) -> [Character] {
+            var stack: [Character] = []
+            str.forEach {
+                if $0 == "#" {
+                    if !stack.isEmpty {
+                        stack.removeLast()
+                    }
+                } else {
+                    stack.append($0)
+                }
+            }
+            
+            print(stack)
+            return stack
+        }
+        
+        return process(s) == process(t)
     }
 
     //3438. Find Valid Pair of Adjacent Digits in String

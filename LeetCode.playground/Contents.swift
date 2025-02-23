@@ -8,8 +8,5 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let easy = StringEasy()
-var chars: [Character] = ["h","e","l","l","o"]
-
 var tagSolution = Tags.stringEasy.create() as? StringEasy
-tagSolution?.reverseString(&chars)
+tagSolution?.backspaceCompare("ab#c", "ad#c")
