@@ -28,8 +28,15 @@ public class LinkedListEasy {
 
     //160. Intersection of Two Linked Lists
     public func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
-        //TODO
-        return nil
+        
+        var aPointer = headA, bPointer = headB
+        
+        while aPointer !== bPointer {
+            aPointer = (aPointer == nil) ? headB : aPointer?.next
+            bPointer = (bPointer == nil) ? headA : bPointer?.next
+        }
+        
+        return aPointer
     }
 
     //203. Remove Linked List Elements

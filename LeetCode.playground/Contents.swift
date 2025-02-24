@@ -8,5 +8,11 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathEasy.create() as? MathEasy
-tagSolution?.fizzBuzz(15)
+let listA = [4,1,8,4,5]
+let listB = [5,6,1,8,4,5]
+
+let headA = MockLinkedList.createLinkedList(from: listA)
+let headB = MockLinkedList.createLinkedList(from: listB)
+
+var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
+tagSolution?.getIntersectionNode(headA, headB)
