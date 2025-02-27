@@ -5,6 +5,8 @@
 //  Created by Ömer Faruk Öztürk on 19.02.2025.
 //
 
+import Foundation
+
 public class ArrayEasy {
     
     public init() {}
@@ -58,7 +60,12 @@ public class ArrayEasy {
         }
         return result
     }
-
+    
+    //35. Search Insert Position
+    public func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        nums.firstIndex(of: target) ?? nums.firstIndex { $0 > target } ?? nums.count
+    }
+    
     //169. Majority Element
     public func majorityElement(_ nums: [Int]) -> Int {
         

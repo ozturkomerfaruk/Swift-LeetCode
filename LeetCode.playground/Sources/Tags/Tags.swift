@@ -10,6 +10,8 @@ public enum Tags {
     case mathEasy
     case linkedListEasy
     case linkedListMedium
+    case arrayEasy
+    case arrayMedium
     
     public func create() -> Any {
         switch self {
@@ -17,6 +19,8 @@ public enum Tags {
         case .mathEasy: return MathEasy()
         case .linkedListEasy: return LinkedListEasy()
         case .linkedListMedium: return LinkedListMedium()
+        case .arrayEasy: return ArrayEasy()
+        case .arrayMedium: return ArrayMedium()
         }
     }
 }

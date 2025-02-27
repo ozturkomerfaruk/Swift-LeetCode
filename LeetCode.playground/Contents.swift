@@ -8,11 +8,7 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let listA = [4,1,8,4,5]
-let listB = [5,6,1,8,4,5]
+let numbers = [1, 3, 5, 7, 9, 11, 13, 15]
 
-let headA = MockLinkedList.createLinkedList(from: listA)
-let headB = MockLinkedList.createLinkedList(from: listB)
-
-var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
-tagSolution?.getIntersectionNode(headA, headB)
+var tagSolution = Tags.arrayEasy.create() as? ArrayEasy
+tagSolution?.searchInsert(numbers, 13)
