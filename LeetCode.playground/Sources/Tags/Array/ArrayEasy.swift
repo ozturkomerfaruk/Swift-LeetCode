@@ -111,6 +111,11 @@ public class ArrayEasy {
         
         return resultArray.lazy.compactMap(Int.init).reduce(0, +)
     }
+    
+    //1929. Concatenation of Array
+    func getConcatenation(_ nums: [Int]) -> [Int] {
+        return nums + nums
+    }
 
     //3452. Sum of Good Numbers
     public func sumOfGoodNumbers(_ nums: [Int], _ k: Int) -> Int {
