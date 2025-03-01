@@ -11,4 +11,6 @@ import Foundation
 let numbers = [1, 3, 5, 7, 9, 11, 13, 15]
 
 var tagSolution = Tags.arrayEasy.create() as? ArrayEasy
-tagSolution?.searchInsert(numbers, 13)
+tagSolution?.search(numbers, 5)
+
+

@@ -89,8 +89,6 @@ public class ArrayEasy {
         return numSet.count != nums.count
     }
 
-
-
     //682. Baseball Game
     public func calPoints(_ operations: [String]) -> Int {
         var resultArray: [Int] = []
@@ -110,6 +108,27 @@ public class ArrayEasy {
         }
         
         return resultArray.lazy.compactMap(Int.init).reduce(0, +)
+    }
+    
+    //704. Binary Search
+    public func search(_ nums: [Int], _ target: Int) -> Int {
+        var left = 0
+        var right = nums.count - 1
+        
+        while left <= right {
+            let mid = (left + right) / 2
+            if target == nums[mid] {
+                return mid
+            }
+            
+            if target < nums[mid] {
+                right = mid - 1
+            } else {
+                left = mid + 1
+            }
+        }
+        
+        return -1
     }
     
     //1929. Concatenation of Array
