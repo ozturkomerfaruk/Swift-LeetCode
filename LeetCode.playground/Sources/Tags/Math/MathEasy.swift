@@ -23,6 +23,23 @@ public class MathEasy {
         }
         return true
     }
+    
+    //66. Plus One
+    public func plusOne(_ digits: [Int]) -> [Int] {
+        var result = digits
+        var i = result.count - 1
+        while i >= 0 {
+            if result[i] < 9 {
+                result[i] += 1
+                return result
+            }
+            
+            result[i] = 0
+            i -= 1
+        }
+        
+        return [1] + result
+    }
 
     //202. Happy Number
     public func isHappy(_ n: Int) -> Bool {
@@ -50,10 +67,6 @@ public class MathEasy {
     }
     
     //412. Fizz Buzz
-    ///reserveCapacity(n) -> Önceden bellek ayırarak dinamik array genişlemesini engeller.
-    ///String birleştirme kaldırıldı -> += yerine append("FizzBuzz") doğrudan çağrıldı.
-    ///% işlemleri azaltıldı -> Fazladan if kontrolü yerine önceden hesaplanmış boolean değerler kullanıldı.
-    ///Daha az gereksiz işlem -> result.isEmpty yerine doğrudan if bloklarıyla ekleme yapıldı.
     public func fizzBuzz(_ n: Int) -> [String] {
         var resultArray = [String]()
         resultArray.reserveCapacity(n) // Önceden kapasite ayır
