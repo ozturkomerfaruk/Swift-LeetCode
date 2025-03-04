@@ -68,7 +68,7 @@ public class StringEasy {
         s.reverse()
     }
 
-    //e
+    //844. Backspace String Compare
     public func backspaceCompare(_ s: String, _ t: String) -> Bool {
         func process(_ str: String) -> [Character] {
             var stack: [Character] = []
