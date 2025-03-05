@@ -8,10 +8,8 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let numbers = [1, 3, 5, 7, 9, 11, 13, 15]
-
 var tagSolution = Tags.stackEasy.create() as? StackEasy
 
-var result = tagSolution?.removeOuterParentheses("(()())(())")
+var result = tagSolution?.isValid("()[]{")
 
-print(result!)
+print(result?.description)
