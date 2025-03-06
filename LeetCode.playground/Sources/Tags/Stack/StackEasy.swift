@@ -54,4 +54,19 @@ public class StackEasy {
         
         return result
     }
+    
+    //1047. Remove All Adjacent Duplicates In String
+    public func removeDuplicates(_ s: String) -> String {
+        var stack = [Character]()
+        
+        for char in s {
+            if stack.last == char {
+                stack.removeLast()
+            } else {
+                stack.append(char)
+            }
+        }
+        
+        return String(stack)
+    }
 }

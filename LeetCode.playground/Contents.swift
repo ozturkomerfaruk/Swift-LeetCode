@@ -10,6 +10,8 @@ import Foundation
 
 var tagSolution = Tags.stackEasy.create() as? StackEasy
 
-var result = tagSolution?.isValid("()[]{")
+var result = tagSolution?.removeDuplicates("aababaab")
 
-print(result?.description)
+
+
+
