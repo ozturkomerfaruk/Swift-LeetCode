@@ -11,8 +11,23 @@ public class ArrayMedium {
     
     //287. Find the Duplicate Number
     public func findDuplicate(_ nums: [Int]) -> Int {
-        //TODO
-        return 0
+        var slow = nums[0]
+        var fast = nums[0]
+        
+        repeat {
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            print("slow: \(slow), fast: \(fast)")
+        } while slow != fast
+        
+        slow = nums[0]
+        
+        while slow != fast {
+            slow = nums[slow]
+            fast = nums[fast]
+        }
+
+        return slow
     }
 
     //739. Daily Temperatures

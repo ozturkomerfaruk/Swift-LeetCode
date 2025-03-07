@@ -29,5 +29,4 @@ public class LinkedListMedium {
         
         return dummy.next
     }
-
 }

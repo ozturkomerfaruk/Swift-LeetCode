@@ -8,10 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stackEasy.create() as? StackEasy
+var tagSolution = Tags.arrayMedium.create() as? ArrayMedium
 
-var result = tagSolution?.removeDuplicates("aababaab")
-
-
-
-
+var result = tagSolution?.findDuplicate([1, 3, 4, 2, 2])
