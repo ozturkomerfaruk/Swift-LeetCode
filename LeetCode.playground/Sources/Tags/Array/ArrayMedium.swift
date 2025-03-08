@@ -17,7 +17,6 @@ public class ArrayMedium {
         repeat {
             slow = nums[slow]
             fast = nums[nums[fast]]
-            print("slow: \(slow), fast: \(fast)")
         } while slow != fast
         
         slow = nums[0]

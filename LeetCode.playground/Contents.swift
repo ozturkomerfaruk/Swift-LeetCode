@@ -8,6 +8,21 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.arrayMedium.create() as? ArrayMedium
+let tree = BinarySearchTree()
+tree.insert(5)
+tree.insert(5)
+tree.insert(2)
+tree.insert(7)
+tree.insert(3)
+tree.insert(8)
+tree.insert(9)
+tree.insert(1)
+tree.insert(4)
+tree.insert(6)
+tree.printTree()
 
-var result = tagSolution?.findDuplicate([1, 3, 4, 2, 2])
+print(tree.contains(4).description)
+print(tree.contains(10).description)
+
+print(tree.min()!)
+print(tree.max()!)
