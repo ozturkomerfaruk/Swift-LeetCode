@@ -9,6 +9,41 @@ public class LinkedListEasy {
     
     public init() {}
     
+    //21. Merge Two Sorted Lists
+    public func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+#if false
+        guard let list1 else { return list2 }
+        guard let list2 else { return list1 }
+        
+        if list1.val < list2.val {
+            list1.next = mergeTwoLists(list1.next, list2)
+            return list1
+        } else {
+            list2.next = mergeTwoLists(list1, list2.next)
+            return list2
+        }
+#else
+        let dummy = ListNode(0)
+        var tail: ListNode? = dummy
+        var l1 = list1, l2 = list2
+        
+        while let n1 = l1, let n2 = l2 {
+            if n1.val < n2.val {
+                tail?.next = n1
+                l1 = n1.next
+            } else {
+                tail?.next = n2
+                l2 = n2.next
+            }
+            
+            tail = tail?.next
+        }
+        
+        tail?.next = l1 ?? l2
+        return dummy.next
+#endif
+    }
+    
     //141. Linked List Cycle
     public func hasCycle(_ head: ListNode?) -> Bool {
         var fast: ListNode? = head

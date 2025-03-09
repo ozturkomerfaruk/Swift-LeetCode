@@ -8,21 +8,11 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-let tree = BinarySearchTree()
-tree.insert(5)
-tree.insert(5)
-tree.insert(2)
-tree.insert(7)
-tree.insert(3)
-tree.insert(8)
-tree.insert(9)
-tree.insert(1)
-tree.insert(4)
-tree.insert(6)
-tree.printTree()
+var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
 
-print(tree.contains(4).description)
-print(tree.contains(10).description)
+var mockA = MockLinkedList.createLinkedList(from: [1,2,4])
+var mockB = MockLinkedList.createLinkedList(from: [1,3,4])
 
-print(tree.min()!)
-print(tree.max()!)
+var result = tagSolution?.mergeTwoLists(mockA, mockB)
+
+result?.printList()

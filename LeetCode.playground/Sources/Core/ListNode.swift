@@ -13,6 +13,18 @@ public class ListNode {
     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
 }
 
+public extension ListNode {
+    func printList() {
+        var current: ListNode? = self
+        var result = [String]()
+        while let node = current {
+            result.append("\(node.val)")
+            current = node.next
+        }
+        print(result.joined(separator: " -> "))
+    }
+}
+
 public final class MockLinkedList {
     public static func createLinkedList(from values: [Int]) -> ListNode? {
         guard !values.isEmpty else { return nil }
