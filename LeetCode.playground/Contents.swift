@@ -8,11 +8,8 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
+var tagSolution = Tags.mathEasy.create() as? MathEasy
 
-var mockA = MockLinkedList.createLinkedList(from: [1,2,4])
-var mockB = MockLinkedList.createLinkedList(from: [1,3,4])
+var result = tagSolution?.isPowerOfTwo(18)
 
-var result = tagSolution?.mergeTwoLists(mockA, mockB)
-
-result?.printList()
+result?.printValue()

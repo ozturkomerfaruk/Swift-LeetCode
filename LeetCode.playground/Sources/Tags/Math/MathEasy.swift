@@ -66,6 +66,23 @@ public class MathEasy {
         return sumOfSquares
     }
     
+    //231. Power of Two
+    public func isPowerOfTwo(_ n: Int) -> Bool {
+#if true
+        n > 0 && (n & (n - 1)) == 0
+#else
+        var num = n
+        while num > 1 {
+            if num % 2 != 0 {
+                return false
+            }
+            num /= 2
+        }
+        
+        return num == 1
+#endif
+    }
+    
     //412. Fizz Buzz
     public func fizzBuzz(_ n: Int) -> [String] {
         var resultArray = [String]()

@@ -14,7 +14,7 @@ public class ListNode {
 }
 
 public extension ListNode {
-    func printList() {
+    func printValue() {
         var current: ListNode? = self
         var result = [String]()
         while let node = current {
