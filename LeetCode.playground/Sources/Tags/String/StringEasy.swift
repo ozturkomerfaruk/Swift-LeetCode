@@ -47,6 +47,11 @@ public class StringEasy {
             $0.commonPrefix(with: $1)
         }
     }
+    
+    //58. Length of Last Word
+    public func lengthOfLastWord(_ s: String) -> Int {
+        return s.split(separator: " ").last?.count ?? 0
+    }
 
     //242. Valid Anagram
     public func isAnagram(_ s: String, _ t: String) -> Bool {
