@@ -12,3 +12,9 @@ public extension Bool {
         print(self.description)
     }
 }
+
+public extension Array {
+    func printValue() {
+        print(self.map { "\($0)" }.joined(separator: ", "))
+    }
+}

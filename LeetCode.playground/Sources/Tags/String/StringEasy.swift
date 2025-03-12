@@ -1,6 +1,6 @@
 //
 //  StringEasy.swift
-//  
+//
 //
 //  Created by Ömer Faruk Öztürk on 19.02.2025.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 public class StringEasy {
-   
+    
     public init() {}
     
     //13. Roman to Integer
@@ -39,7 +39,7 @@ public class StringEasy {
         
         return result
     }
-
+    
     //14. Longest Common Prefix
     public func longestCommonPrefix(_ strs: [String]) -> String {
         guard let first = strs.first else { return "" }
@@ -52,7 +52,7 @@ public class StringEasy {
     public func lengthOfLastWord(_ s: String) -> Int {
         return s.split(separator: " ").last?.count ?? 0
     }
-
+    
     //242. Valid Anagram
     public func isAnagram(_ s: String, _ t: String) -> Bool {
         guard s.count == t.count else { return false }
@@ -67,12 +67,24 @@ public class StringEasy {
         
         return charCount.allSatisfy { $0 == 0 }
     }
-
+    
     //344. Reverse String
     public func reverseString(_ s: inout [Character]) {
+#if true
+        func reverseRecursive(str: [Character], start: Int, end: Int) {
+            if start >= end { return }
+            
+            s.swapAt(start, end)
+            reverseRecursive(str: str, start: start + 1, end: end - 1)
+         }
+         
+         reverseRecursive(str: s, start: 0, end: s.count - 1)
+#else
         s.reverse()
+#endif
+        
     }
-
+    
     //844. Backspace String Compare
     public func backspaceCompare(_ s: String, _ t: String) -> Bool {
         func process(_ str: String) -> [Character] {
@@ -93,7 +105,7 @@ public class StringEasy {
         
         return process(s) == process(t)
     }
-
+    
     //3438. Find Valid Pair of Adjacent Digits in String
     public func findValidPair(_ s: String) -> String {
         let freq = Dictionary(s.map { ($0, 1)}, uniquingKeysWith: +)
@@ -104,7 +116,7 @@ public class StringEasy {
         
         return ""
     }
-
+    
     //3442. Maximum Difference Between Even and Odd Frequency I
     public func maxDifference(_ s: String) -> Int {
         var dict: [Character: Int] = [:]
@@ -121,5 +133,5 @@ public class StringEasy {
         
         return max - min
     }
-
+    
 }
