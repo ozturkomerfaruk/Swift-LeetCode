@@ -13,6 +13,18 @@ public extension Bool {
     }
 }
 
+public extension Int {
+    func printValue() {
+        print(self.description)
+    }
+}
+
+public extension String {
+    func printValue() {
+        print(self.description)
+    }
+}
+
 public extension Array {
     func printValue() {
         print(self.map { "\($0)" }.joined(separator: ", "))

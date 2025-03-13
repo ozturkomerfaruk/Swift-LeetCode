@@ -107,13 +107,18 @@ public class MathEasy {
 
     //509. Fibonacci Number
     public func fib(_ n: Int) -> Int {
+#if false
         if n < 2 { return n }
-
+        return fib(n - 1) + fib(n - 2)
+#else
+        if n < 2 { return n }
+        
         var a = 0, b = 1
         for _ in 2...n {
             (a, b) = (b, a + b)
         }
-
+        
         return b
+#endif
     }
 }

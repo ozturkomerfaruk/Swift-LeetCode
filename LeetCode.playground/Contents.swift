@@ -10,6 +10,6 @@ import Foundation
 
 var tagSolution = Tags.mathEasy.create() as? MathEasy
 
-var result = tagSolution?.isPowerOfTwo(18)
+var result = tagSolution?.fib(2)
 
 result?.printValue()
