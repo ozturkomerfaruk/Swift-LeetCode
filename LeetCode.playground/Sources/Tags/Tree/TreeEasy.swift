@@ -9,6 +9,16 @@ public class TreeEasy {
     
     public init() {}
     
+    //100. Same Tree
+    public func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        guard let p = p, let q = q, p.val == q.val else { return p == nil && q == nil }
+
+        let leftSame = isSameTree(p.left, q.left)
+        let rightSame = isSameTree(p.right, q.right)
+        
+        return leftSame && rightSame
+    }
+    
     //226. Invert Binary Tree
     public func invertTree(_ root: TreeNode?) -> TreeNode? {
         //MARK: Tree Traversal

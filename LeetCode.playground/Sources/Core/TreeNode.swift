@@ -19,7 +19,7 @@ public class TreeNode {
 }
 
 public extension TreeNode {
-    func printTree() {
+    func printValue() {
         var queue: [TreeNode?] = [self]
         var result = [String]()
 
@@ -40,30 +40,17 @@ public extension TreeNode {
     }
 }
 
-public final class MockBinaryTree {
+public final class MockTreeNode {
     public static func createBinaryTree(from values: [Int?]) -> TreeNode? {
-        guard !values.isEmpty, let first = values[0] else { return nil }
+        guard !values.isEmpty else { return nil }
         
-        let root = TreeNode(first)
-        var queue: [TreeNode] = [root]
-        var index = 1
+        let tree = BinarySearchTree()
         
-        while index < values.count {
-            let current = queue.removeFirst()
-            
-            if index < values.count, let leftVal = values[index] {
-                current.left = TreeNode(leftVal)
-                queue.append(current.left!)
-            }
-            index += 1
-            
-            if index < values.count, let rightVal = values[index] {
-                current.right = TreeNode(rightVal)
-                queue.append(current.right!)
-            }
-            index += 1
+        for value in values.compactMap({ $0 }) {
+            tree.insert(value)
         }
         
-        return root
+        return tree.root
     }
 }
+

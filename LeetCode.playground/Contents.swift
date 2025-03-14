@@ -8,8 +8,11 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathEasy.create() as? MathEasy
+var tagSolution = Tags.treeEasy.create() as? TreeEasy
 
-var result = tagSolution?.fib(2)
+let p = MockTreeNode.createBinaryTree(from: [1,2,3])
+let q = MockTreeNode.createBinaryTree(from: [1,2,3])
+
+var result = tagSolution?.isSameTree(p, q)
 
 result?.printValue()
