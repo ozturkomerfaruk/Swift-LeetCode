@@ -40,6 +40,26 @@ public class MathEasy {
         
         return [1] + result
     }
+    
+    //69. Sqrt(x)
+    public func mySqrt(_ x: Int) -> Int {
+        if x < 2 { return x }
+        
+        var left = 1, right = x
+        
+        while left <= right {
+            let mid = left + (right - left) / 2
+            if mid * mid == x {
+                return mid
+            } else if mid * mid < x {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+        
+        return right
+    }
 
     //202. Happy Number
     public func isHappy(_ n: Int) -> Bool {
@@ -58,12 +78,12 @@ public class MathEasy {
         }
         
         return true
-    }
-
-    private func squareAndSumDigits(n: Int) -> Int {
-        let digits: [Int] = String(n).map { Int(String($0))! }
-        let sumOfSquares: Int = digits.reduce(0) { $0 + $1 * $1 }
-        return sumOfSquares
+        
+        func squareAndSumDigits(n: Int) -> Int {
+            let digits: [Int] = String(n).map { Int(String($0))! }
+            let sumOfSquares: Int = digits.reduce(0) { $0 + $1 * $1 }
+            return sumOfSquares
+        }
     }
     
     //231. Power of Two
