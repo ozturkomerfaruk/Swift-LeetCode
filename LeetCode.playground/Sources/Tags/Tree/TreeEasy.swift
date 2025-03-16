@@ -19,6 +19,22 @@ public class TreeEasy {
         return leftSame && rightSame
     }
     
+    //108. Convert Sorted Array to Binary Search Tree
+    public func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+        func helper(_ left: Int, _ right: Int) -> TreeNode? {
+            guard left <= right else { return nil }
+            
+            let mid = (left + right) / 2
+            let root = TreeNode(nums[mid])
+            root.left = helper(left, mid - 1)
+            root.right = helper(mid + 1, right)
+            
+            return root
+        }
+        
+        return helper(0, nums.count - 1)
+    }
+    
     //226. Invert Binary Tree
     public func invertTree(_ root: TreeNode?) -> TreeNode? {
         //MARK: Tree Traversal

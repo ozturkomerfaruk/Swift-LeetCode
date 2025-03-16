@@ -8,10 +8,8 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathEasy.create() as? MathEasy
+var tagSolution = Tags.treeEasy.create() as? TreeEasy
 
-tagSolution?.mySqrt(4).printValue()
-tagSolution?.mySqrt(7).printValue()
-tagSolution?.mySqrt(8).printValue()
-tagSolution?.mySqrt(9).printValue()
-tagSolution?.mySqrt(10).printValue()
+tagSolution?.sortedArrayToBST([-10,-3,0,5,9])?.printValue()
+
+//0 -> -10 -> 0 -> nil -> -3 -> nil -> 5 -> nil -> nil -> nil -> 9
