@@ -65,4 +65,36 @@ public class TreeEasy {
         return root
 #endif
     }
+    
+    //501. Find Mode in Binary Search Tree
+    public func findMode(_ root: TreeNode?) -> [Int] {
+        var currentVal: Int?
+        var currentCount = 0, maxCount = 0
+        var modes: [Int] = []
+        
+        func inOrderTraversal(_ node: TreeNode?) {
+            guard let node else { return }
+            
+            inOrderTraversal(node.left)
+            
+            if currentVal == node.val {
+                currentCount += 1
+            } else {
+                currentVal = node.val
+                currentCount = 1
+            }
+            
+            if currentCount > maxCount {
+                maxCount = currentCount
+                modes = [node.val]
+            } else if currentCount == maxCount {
+                modes.append(node.val)
+            }
+            
+            inOrderTraversal(node.right)
+        }
+        
+        inOrderTraversal(root)
+        return modes
+    }
 }

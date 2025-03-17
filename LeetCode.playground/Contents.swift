@@ -10,6 +10,8 @@ import Foundation
 
 var tagSolution = Tags.treeEasy.create() as? TreeEasy
 
-tagSolution?.sortedArrayToBST([-10,-3,0,5,9])?.printValue()
+let node = MockTreeNode.createBinaryTree(from: [1,2,2,3])
 
+tagSolution?.findMode(node).printValue()
 //0 -> -10 -> 0 -> nil -> -3 -> nil -> 5 -> nil -> nil -> nil -> 9
+ 
