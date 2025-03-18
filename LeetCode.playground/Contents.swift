@@ -10,8 +10,7 @@ import Foundation
 
 var tagSolution = Tags.treeEasy.create() as? TreeEasy
 
-let node = MockTreeNode.createBinaryTree(from: [1,2,2,3])
+let node = MockTreeNode.createBinaryTree(from: [1,2,3,4,5,6])
 
-tagSolution?.findMode(node).printValue()
-//0 -> -10 -> 0 -> nil -> -3 -> nil -> 5 -> nil -> nil -> nil -> 9
+tagSolution?.countNodes(node).printValue()
  

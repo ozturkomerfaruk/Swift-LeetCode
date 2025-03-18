@@ -5,6 +5,8 @@
 //  Created by Ömer Faruk Öztürk on 19.02.2025.
 //
 
+import Foundation
+
 public class TreeEasy {
     
     public init() {}
@@ -33,6 +35,46 @@ public class TreeEasy {
         }
         
         return helper(0, nums.count - 1)
+    }
+    
+    
+    //222. Count Complete Tree Nodes
+    public func countNodes(_ root: TreeNode?) -> Int {
+        #if false
+        var layerCount = 0
+        
+        func helper(_ root: TreeNode?) -> Int {
+            guard let root else { return layerCount }
+            
+            _ = helper(root.left)
+            _ = helper(root.right)
+            
+            layerCount += 1
+            return layerCount
+        }
+        
+        return helper(root)
+        #else
+        guard let root else { return 0 }
+        var leftDepth = 0, rightDepth = 0
+        var leftNode: TreeNode? = root, rightNode: TreeNode? = root
+        
+        while leftNode != nil {
+            leftNode = leftNode?.left
+            leftDepth += 1
+        }
+        
+        while rightNode != nil {
+            rightNode = rightNode?.right
+            rightDepth += 1
+        }
+        
+        if leftDepth == rightDepth {
+            return (1 << leftDepth) - 1 // 2^h - 1
+        }
+        
+        return 1 + countNodes(root.left) + countNodes(root.right)
+        #endif
     }
     
     //226. Invert Binary Tree
