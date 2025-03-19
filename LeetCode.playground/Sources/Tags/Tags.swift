@@ -8,6 +8,7 @@
 public enum Tags {
     case stringEasy
     case mathEasy
+    case mathMedium
     case linkedListEasy
     case linkedListMedium
     case arrayEasy
@@ -19,6 +20,7 @@ public enum Tags {
         switch self {
         case .stringEasy: return StringEasy()
         case .mathEasy: return MathEasy()
+        case .mathMedium: return MathMedium()
         case .linkedListEasy: return LinkedListEasy()
         case .linkedListMedium: return LinkedListMedium()
         case .arrayEasy: return ArrayEasy()
