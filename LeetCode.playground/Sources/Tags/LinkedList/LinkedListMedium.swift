@@ -1,12 +1,12 @@
 //
 //  LinkedListMedium.swift
-//  
+//
 //
 //  Created by Ömer Faruk Öztürk on 19.02.2025.
 //
 
 public class LinkedListMedium {
- 
+    
     public init() {}
     
     //19. Remove Nth Node From End of List
@@ -26,6 +26,28 @@ public class LinkedListMedium {
         }
         
         slow?.next = slow?.next?.next
+        
+        return dummy.next
+    }
+    
+    //24. Swap Nodes in Pairs
+    public func swapPairs(_ head: ListNode?) -> ListNode? {
+        let dummy = ListNode(0)
+        dummy.next = head
+        
+        var prev: ListNode? = dummy
+        var first: ListNode? = head
+        
+        while let second = first?.next {
+            let nextPair = second.next
+            
+            prev?.next = second
+            second.next = first
+            first?.next = nextPair
+            
+            prev = first
+            first = nextPair
+        }
         
         return dummy.next
     }

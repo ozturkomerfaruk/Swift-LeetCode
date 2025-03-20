@@ -8,9 +8,8 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathMedium.create() as? MathMedium
+var tagSolution = Tags.linkedListMedium.create() as? LinkedListMedium
 
-let l1 = MockLinkedList.createLinkedList(from: [2,4,3])
-let l2 = MockLinkedList.createLinkedList(from: [5,6,4])
+let l1 = MockLinkedList.createLinkedList(from: [1,2,3,4])
 
-tagSolution?.addTwoNumbers(l1, l2)?.printValue()
+tagSolution?.swapPairs(l1)?.printValue()
