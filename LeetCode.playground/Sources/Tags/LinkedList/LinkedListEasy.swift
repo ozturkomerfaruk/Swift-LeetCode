@@ -76,8 +76,20 @@ public class LinkedListEasy {
 
     //203. Remove Linked List Elements
     public func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
-        //TODO
-        return nil
+        let dummy = ListNode(0)
+        dummy.next = head
+        
+        var current = dummy
+        
+        while current.next != nil {
+            if current.next?.val == val {
+                current.next = current.next?.next
+            } else {
+                current = current.next!
+            }
+        }
+        
+        return dummy.next
     }
 
     //206. Reverse Linked List
