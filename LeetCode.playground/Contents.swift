@@ -8,8 +8,9 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
+var tagSolution = Tags.mathEasy.create() as? MathEasy
 
-let l1 = MockLinkedList.createLinkedList(from: [1,2,3,4,2,6])
+let l1 = [4, 9, 5]
+let l2 = [9, 4, 9, 8, 4]
 
-tagSolution?.removeElements(l1, 2)?.printValue()
+tagSolution?.intersection(l1, l2).printValue()

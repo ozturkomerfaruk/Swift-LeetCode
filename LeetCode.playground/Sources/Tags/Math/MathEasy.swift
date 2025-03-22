@@ -141,4 +141,9 @@ public class MathEasy {
         return b
 #endif
     }
+    
+    //349. Intersection of Two Arrays
+    public func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        Array(Set(nums1).intersection(nums2))
+    }
 }
