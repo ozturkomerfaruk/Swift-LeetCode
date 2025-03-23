@@ -10,7 +10,4 @@ import Foundation
 
 var tagSolution = Tags.mathEasy.create() as? MathEasy
 
-let l1 = [4, 9, 5]
-let l2 = [9, 4, 9, 8, 4]
-
-tagSolution?.intersection(l1, l2).printValue()
+tagSolution?.canAliceWin(1).printValue()

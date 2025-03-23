@@ -146,4 +146,19 @@ public class MathEasy {
     public func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         Array(Set(nums1).intersection(nums2))
     }
+    
+    //3360. Stone Removal Game
+    public func canAliceWin(_ n: Int) -> Bool {
+        var totalStone = n
+        var take = 10
+        var isTurnAlice = true
+        
+        while totalStone >= take {
+            totalStone -= take
+            take -= 1
+            isTurnAlice.toggle()
+        }
+        
+        return !isTurnAlice
+    }
 }
