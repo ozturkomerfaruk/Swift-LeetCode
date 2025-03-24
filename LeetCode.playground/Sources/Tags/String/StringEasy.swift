@@ -53,6 +53,62 @@ public class StringEasy {
         return s.split(separator: " ").last?.count ?? 0
     }
     
+    //67. Add Binary
+    public func addBinary(_ a: String, _ b: String) -> String {
+#if false
+        let aChars = Array(a.reversed())
+        let bChars = Array(b.reversed())
+        
+        var result = ""
+        var carry = 0
+        let maxLength = max(aChars.count, bChars.count)
+        
+        for i in 0..<maxLength {
+            let digitA = i < aChars.count ? Int(String(aChars[i]))! : 0
+            let digitB = i < bChars.count ? Int(String(bChars[i]))! : 0
+            
+            let sum = digitA + digitB + carry
+            result.append(String(sum % 2))
+            carry = sum / 2
+        }
+        
+        if carry > 0 {
+            result.append(String(carry))
+        }
+        
+        return String(result.reversed())
+#elseif true
+        var i = a.count - 1, j = b.count - 1, carry = 0
+        var result = ""
+        
+        let aChars = Array(a)
+        let bChars = Array(b)
+        
+        while i >= 0 || j >= 0 || carry != 0 {
+            let digitA = i >= 0 ? Int(String(aChars[i]))! : 0
+            let digitB = j >= 0 ? Int(String(bChars[j]))! : 0
+            
+            let sum = digitA + digitB + carry
+            result.append(String(sum % 2))
+            carry = sum / 2
+            
+            i -= 1
+            j -= 1
+        }
+        
+        return String(result.reversed())
+#elseif false
+        //FAIL
+        ///a: 10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101
+        ///b: 110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011
+        guard let aInt = Int(a, radix: 2), let bInt = Int(b, radix: 2) else {
+            return ""
+        }
+        let sum = aInt + bInt
+        return String(sum, radix: 2)
+#endif
+    }
+    
     //242. Valid Anagram
     public func isAnagram(_ s: String, _ t: String) -> Bool {
         guard s.count == t.count else { return false }
@@ -76,13 +132,12 @@ public class StringEasy {
             
             s.swapAt(start, end)
             reverseRecursive(str: str, start: start + 1, end: end - 1)
-         }
-         
-         reverseRecursive(str: s, start: 0, end: s.count - 1)
+        }
+        
+        reverseRecursive(str: s, start: 0, end: s.count - 1)
 #else
         s.reverse()
 #endif
-        
     }
     
     //844. Backspace String Compare

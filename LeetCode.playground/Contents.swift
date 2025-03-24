@@ -8,6 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathEasy.create() as? MathEasy
+var tagSolution = Tags.stringEasy.create() as? StringEasy
 
-tagSolution?.canAliceWin(1).printValue()
+tagSolution?.addBinary("111", "1").printValue()
