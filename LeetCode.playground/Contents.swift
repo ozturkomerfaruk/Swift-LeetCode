@@ -8,6 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringEasy.create() as? StringEasy
+var tagSolution = Tags.arrayEasy.create() as? ArrayEasy
 
-tagSolution?.addBinary("111", "1").printValue()
+tagSolution?.transformArray([1,5,1,4,2]).printValue()

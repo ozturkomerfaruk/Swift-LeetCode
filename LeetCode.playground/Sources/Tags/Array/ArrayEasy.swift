@@ -150,4 +150,8 @@ public class ArrayEasy {
         return sum
     }
 
+    //3467. Transform Array by Parity
+    public func transformArray(_ nums: [Int]) -> [Int] {
+        nums.map { $0 % 2 == 0 ? 0 : 1 }.sorted()
+    }
 }
