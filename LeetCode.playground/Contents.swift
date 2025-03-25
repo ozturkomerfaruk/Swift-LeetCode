@@ -8,6 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.arrayEasy.create() as? ArrayEasy
+var tagSolution = Tags.stringEasy.create() as? StringEasy
 
-tagSolution?.transformArray([1,5,1,4,2]).printValue()
+tagSolution?.scoreOfString("zaz").printValue()

@@ -161,6 +161,26 @@ public class StringEasy {
         return process(s) == process(t)
     }
     
+    //3110. Score of a String
+    public func scoreOfString(_ s: String) -> Int {
+#if false
+        let result = s.indices.map { Int(s[$0].asciiValue!) }
+        var sum = 0
+        
+        for i in result.indices {
+            if i + 1 == result.count {
+                break
+            }
+            
+            sum += abs(result[i] - result[i+1])
+        }
+        
+        return sum
+#else
+        zip(s, s.dropFirst()).reduce(0) { $0 + abs(Int($1.0.asciiValue!) - Int($1.1.asciiValue!)) }
+#endif
+    }
+    
     //3438. Find Valid Pair of Adjacent Digits in String
     public func findValidPair(_ s: String) -> String {
         let freq = Dictionary(s.map { ($0, 1)}, uniquingKeysWith: +)
