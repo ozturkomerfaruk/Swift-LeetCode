@@ -107,4 +107,16 @@ public class LinkedListEasy {
         
         return prevNode
     }
+    
+    //1290. Convert Binary Number in a Linked List to Integer
+    public func getDecimalValue(_ head: ListNode?) -> Int {
+        var result = 0
+        var current = head
+        while let node = current {
+            result = (result << 1) | node.val
+            current = node.next
+        }
+        return result
+    }
+
 }

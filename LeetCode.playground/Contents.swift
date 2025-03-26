@@ -8,6 +8,8 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringEasy.create() as? StringEasy
+var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
 
-tagSolution?.scoreOfString("zaz").printValue()
+let l1 = MockLinkedList.createLinkedList(from: [1,0,1])
+
+tagSolution?.getDecimalValue(l1).printValue()
