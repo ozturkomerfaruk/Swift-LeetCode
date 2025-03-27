@@ -51,4 +51,26 @@ public class LinkedListMedium {
         
         return dummy.next
     }
+    
+    //2181. Merge Nodes in Between Zeros
+    public func mergeNodes(_ head: ListNode?) -> ListNode? {
+        var current = head?.next
+        var sum = 0
+        let dummy = ListNode(0)
+        var tail = dummy
+        
+        while let node = current {
+            if node.val == 0 {
+                tail.next = ListNode(sum)
+                tail = tail.next!
+                sum = 0
+            } else {
+                sum += node.val
+            }
+            
+            current = node.next
+        }
+        
+        return dummy.next
+    }
 }
