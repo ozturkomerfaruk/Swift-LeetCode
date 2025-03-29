@@ -8,8 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.linkedListMedium.create() as? LinkedListMedium
+var tagSolution = Tags.stringMedium.create() as? StringMedium
 
-let l1 = MockLinkedList.createLinkedList(from: [0,3,1,0,4,5,2,0])
-
-tagSolution?.mergeNodes(l1)?.printValue()
+tagSolution?.convert("PAYPALISHIRING", 4).printValue()
