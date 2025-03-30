@@ -8,6 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringMedium.create() as? StringMedium
+var tagSolution = Tags.stringEasy.create() as? StringEasy
 
-tagSolution?.convert("PAYPALISHIRING", 4).printValue()
+tagSolution?.hasSameDigits("3902").printValue()

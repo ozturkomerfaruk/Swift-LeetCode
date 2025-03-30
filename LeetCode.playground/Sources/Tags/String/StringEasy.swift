@@ -209,4 +209,14 @@ public class StringEasy {
         return max - min
     }
     
+    //3461. Check If Digits Are Equal in String After Operations I
+    public func hasSameDigits(_ s: String) -> Bool {
+        var digits = s.map { Int(String($0))! }
+        
+        while digits.count > 2 {
+            digits = zip(digits, digits.dropFirst()).map { ($0 + $1) % 10 }
+        }
+        
+        return digits[0] == digits[1]
+    }
 }
