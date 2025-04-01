@@ -8,9 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringMedium.create() as? StringMedium
+var tagSolution = Tags.stringEasy.create() as? StringEasy
 
-//tagSolution?.lengthOfLongestSubstring("pwwkew").printValue()
-//tagSolution?.lengthOfLongestSubstring("abcabcbb").printValue()
-//tagSolution?.lengthOfLongestSubstring("abcdcmnpk").printValue()
-tagSolution?.lengthOfLongestSubstring("abcdbb").printValue()
+tagSolution?.strStr("qwesadbutsad", "sad").printValue()

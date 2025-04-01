@@ -48,6 +48,12 @@ public class StringEasy {
         }
     }
     
+    //28. Find the Index of the First Occurrence in a String
+    public func strStr(_ haystack: String, _ needle: String) -> Int {
+        guard let range = haystack.range(of: needle) else { return -1 }
+        return haystack.distance(from: haystack.startIndex, to: range.lowerBound)
+    }
+    
     //58. Length of Last Word
     public func lengthOfLastWord(_ s: String) -> Int {
         return s.split(separator: " ").last?.count ?? 0
