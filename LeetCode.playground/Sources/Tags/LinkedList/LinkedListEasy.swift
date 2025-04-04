@@ -5,6 +5,8 @@
 //  Created by Ömer Faruk Öztürk on 19.02.2025.
 //
 
+import Foundation
+
 public class LinkedListEasy {
     
     public init() {}
@@ -106,6 +108,19 @@ public class LinkedListEasy {
         }
         
         return prevNode
+    }
+    
+    //876. Middle of the Linked List
+    public func middleNode(_ head: ListNode?) -> ListNode? {
+        var fast: ListNode? = head
+        var slow: ListNode? = head
+        
+        while fast != nil, fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        
+        return slow
     }
     
     //1290. Convert Binary Number in a Linked List to Integer
