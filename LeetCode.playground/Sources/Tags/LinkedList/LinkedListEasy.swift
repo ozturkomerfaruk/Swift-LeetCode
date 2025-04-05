@@ -46,6 +46,21 @@ public class LinkedListEasy {
 #endif
     }
     
+    //83. Remove Duplicates from Sorted List
+    public func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+        var current: ListNode? = head
+        
+        while current?.next != nil {
+            if current?.val == current?.next?.val {
+                current?.next = current?.next?.next
+            } else {
+                current = current?.next
+            }
+        }
+        
+        return head
+    }
+    
     //141. Linked List Cycle
     public func hasCycle(_ head: ListNode?) -> Bool {
         var fast: ListNode? = head

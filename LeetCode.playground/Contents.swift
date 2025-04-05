@@ -9,5 +9,5 @@ import Foundation
 ///
 
 var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
-let head = MockLinkedList.createLinkedList(from: [1,2,3,4,5,6])
-tagSolution?.middleNode(head)?.printValue()
+let head = MockLinkedList.createLinkedList(from: [1,1,1])
+tagSolution?.deleteDuplicates(head)?.printValue()
