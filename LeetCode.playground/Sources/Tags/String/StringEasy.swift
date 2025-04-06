@@ -167,6 +167,22 @@ public class StringEasy {
         return process(s) == process(t)
     }
     
+    //1108. Defanging an IP Address
+    public func defangIPaddr(_ address: String) -> String {
+#if false
+        var result = ""
+        result.reserveCapacity(address.count + 6)
+        
+        for char in address {
+            result += (char == "." ? "[.]" : String(char))
+        }
+        
+        return result
+#else
+        address.replacingOccurrences(of: ".", with: "[.]")
+#endif
+    }
+    
     //3110. Score of a String
     public func scoreOfString(_ s: String) -> Int {
 #if false

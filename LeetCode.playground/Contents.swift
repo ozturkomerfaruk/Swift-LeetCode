@@ -8,6 +8,5 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.linkedListEasy.create() as? LinkedListEasy
-let head = MockLinkedList.createLinkedList(from: [1,1,1])
-tagSolution?.deleteDuplicates(head)?.printValue()
+var tagSolution = Tags.stringEasy.create() as? StringEasy
+tagSolution?.defangIPaddr("1.1.1.1").printValue()
