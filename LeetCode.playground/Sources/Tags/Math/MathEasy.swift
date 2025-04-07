@@ -60,6 +60,30 @@ public class MathEasy {
         
         return right
     }
+    
+    //70. Climbing Stairs
+    public func climbStairs(_ n: Int) -> Int {
+#if false
+        guard n > 2 else { return n }
+        var prev = 1, curr = 2
+        for _ in 3...n {
+            (prev, curr) = (curr, prev + curr)
+        }
+        return curr
+#else
+        guard n >= 0 else { return 0 }
+        var dp = [Int](repeating: 0, count: n + 1)
+        dp[0] = 1
+        
+        for i in 1...n {
+            dp[i] += i - 1 >= 0 ? dp[i - 1] : 0
+            dp[i] += i - 2 >= 0 ? dp[i - 2] : 0
+            print(dp[i])
+        }
+        
+        return dp[n]
+#endif
+    }
 
     //202. Happy Number
     public func isHappy(_ n: Int) -> Bool {

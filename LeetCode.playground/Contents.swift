@@ -8,5 +8,5 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.stringEasy.create() as? StringEasy
-tagSolution?.defangIPaddr("1.1.1.1").printValue()
+var tagSolution = Tags.mathEasy.create() as? MathEasy
+tagSolution?.climbStairs(4).printValue()
