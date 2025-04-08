@@ -8,5 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.mathEasy.create() as? MathEasy
-tagSolution?.climbStairs(4).printValue()
+var tagSolution = Tags.treeEasy.create() as? TreeEasy
+let root = MockTreeNode.createBinaryTree(from: [10,5,15,3,7,nil,18])
+tagSolution?.rangeSumBST(root, 7, 15).printValue()

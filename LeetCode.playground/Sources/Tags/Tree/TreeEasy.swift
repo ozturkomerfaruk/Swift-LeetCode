@@ -40,7 +40,7 @@ public class TreeEasy {
     
     //222. Count Complete Tree Nodes
     public func countNodes(_ root: TreeNode?) -> Int {
-        #if false
+#if false
         var layerCount = 0
         
         func helper(_ root: TreeNode?) -> Int {
@@ -54,7 +54,7 @@ public class TreeEasy {
         }
         
         return helper(root)
-        #else
+#else
         guard let root else { return 0 }
         var leftDepth = 0, rightDepth = 0
         var leftNode: TreeNode? = root, rightNode: TreeNode? = root
@@ -74,7 +74,7 @@ public class TreeEasy {
         }
         
         return 1 + countNodes(root.left) + countNodes(root.right)
-        #endif
+#endif
     }
     
     //226. Invert Binary Tree
@@ -138,5 +138,20 @@ public class TreeEasy {
         
         inOrderTraversal(root)
         return modes
+    }
+    
+    //938. Range Sum of BST
+    public func rangeSumBST(_ root: TreeNode?, _ low: Int, _ high: Int) -> Int {
+        guard let root else { return 0 }
+        
+        if root.val < low {
+            return rangeSumBST(root.right, low, high)
+        } else if root.val > high {
+            return rangeSumBST(root.left, low, high)
+        } else {
+            return root.val +
+            rangeSumBST(root.left, low, high) +
+            rangeSumBST(root.right, low, high)
+        }
     }
 }
