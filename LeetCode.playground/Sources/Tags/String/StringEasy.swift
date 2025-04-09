@@ -146,6 +146,24 @@ public class StringEasy {
 #endif
     }
     
+    //387. First Unique Character in a String
+    public func firstUniqChar(_ s: String) -> Int {
+        var queue: [(Character, Int)] = []
+        var seen: Set<Character> = []
+        
+        for (index, char) in s.enumerated() {
+            if seen.contains(char) {
+                queue.removeAll { $0.0 == char }
+                continue
+            }
+            
+            seen.insert(char)
+            queue.append((char, index))
+        }
+        
+        return queue.first?.1 ?? -1
+    }
+    
     //844. Backspace String Compare
     public func backspaceCompare(_ s: String, _ t: String) -> Bool {
         func process(_ str: String) -> [Character] {
