@@ -63,7 +63,23 @@ public class ArrayEasy {
     
     //35. Search Insert Position
     public func searchInsert(_ nums: [Int], _ target: Int) -> Int {
-        nums.firstIndex(of: target) ?? nums.firstIndex { $0 > target } ?? nums.count
+        var left = 0
+        var right = nums.count - 1
+        
+        while left <= right {
+            let mid = (left + right) / 2
+            if target == nums[mid] {
+                return mid
+            }
+            
+            if target < nums[mid] {
+                right = mid - 1
+            } else {
+                left = mid + 1
+            }
+        }
+        
+        return left
     }
     
     //169. Majority Element
