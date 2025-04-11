@@ -8,6 +8,6 @@ import Foundation
 /// **LinkedIn** [Omer Faruk Ozturk on LinkedIn](https://www.linkedin.com/in/ozturkomerfaruk/)
 ///
 
-var tagSolution = Tags.arrayEasy.create() as? ArrayEasy
-tagSolution?.searchInsert([1,3,5,6], 0).printValue()
+var tagSolution = Tags.stringMedium.create() as? StringMedium
+tagSolution?.longestPalindrome("babad").printValue()
 

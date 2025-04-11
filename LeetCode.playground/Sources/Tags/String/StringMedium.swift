@@ -25,6 +25,38 @@ public class StringMedium {
         return maxLength
     }
     
+    //5. Longest Palindromic Substring
+    public func longestPalindrome(_ s: String) -> String {
+        let chars = Array(s)
+        var start = 0
+        var end = 0
+        
+        for i in 0..<chars.count {
+            let len1 = expandAroundCentre(chars, left: i, right: i)
+            let len2 = expandAroundCentre(chars, left: i, right: i + 1)
+            let len = max(len1, len2)
+            
+            if len > end - start {
+                start = i - (len - 1) / 2
+                end = i + len / 2
+            }
+        }
+        
+        return String(chars[start...end])
+        
+        func expandAroundCentre(_ chars: [Character], left: Int, right: Int) -> Int {
+            var leftValue = left
+            var rightValue = right
+
+            while leftValue >= 0, rightValue < chars.count, chars[leftValue] == chars[rightValue] {
+                leftValue -= 1
+                rightValue += 1
+            }
+
+            return rightValue - leftValue - 1
+        }
+    }
+    
     //6. Zigzag Conversion
     public func convert(_ s: String, _ numRows: Int) -> String {
         guard numRows > 1,
