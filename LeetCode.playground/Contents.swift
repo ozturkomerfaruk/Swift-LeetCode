@@ -9,5 +9,5 @@ import Foundation
 ///
 
 var tagSolution = Tags.stringMedium.create() as? StringMedium
-tagSolution?.longestPalindrome("babad").printValue()
+tagSolution?.generateParenthesis(3).printValue()
 

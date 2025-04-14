@@ -78,4 +78,27 @@ public class StringMedium {
         
         return rows.joined()
     }
+    
+    //22. Generate Parentheses
+    public func generateParenthesis(_ n: Int) -> [String] {
+        
+        func backtrack(open: Int, close: Int, current: String) {
+            if current.count == n * 2 {
+                result.append(current)
+                return
+            }
+            
+            if open < n {
+                backtrack(open: open + 1, close: close, current: current + "(")
+            }
+            
+            if close < open {
+                backtrack(open: open, close: close + 1, current: current + ")")
+            }
+        }
+        
+        var result: [String] = []
+        backtrack(open: 0, close: 0, current: "")
+        return result
+    }
 }
