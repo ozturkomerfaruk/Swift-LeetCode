@@ -19,4 +19,4 @@ As a passionate **iOS developer** and software engineer, I enjoy tackling algori
 🔗 **LeetCode**: [Ömer Faruk Öztürk](https://leetcode.com/u/omerfarukozturk026/)  
 🔗 **LinkedIn**: [Ömer Faruk Öztürk](https://www.linkedin.com/in/ozturkomerfaruk/)  
 
-🚀 **Happy Coding!** 🎯    
+🚀 **Happy Coding!** 🎯      
